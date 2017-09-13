@@ -1,8 +1,8 @@
 <?php
 $xpdo_meta_map['OsnastkaItem'] = array(
-    'package' => 'Osnastka',
+    'package' => 'osnastka',
     'version' => '1.1',
-    'table' => 'Osnastka_items',
+    'table' => 'osnastka_items',
     'extends' => 'xPDOSimpleObject',
     'fields' =>
         array(

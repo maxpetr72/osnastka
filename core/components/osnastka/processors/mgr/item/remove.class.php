@@ -4,7 +4,7 @@ class OsnastkaItemRemoveProcessor extends modObjectProcessor
 {
     public $objectType = 'OsnastkaItem';
     public $classKey = 'OsnastkaItem';
-    public $languageTopics = array('Osnastka');
+    public $languageTopics = array('osnastka');
     //public $permission = 'remove';
 
 
@@ -19,13 +19,13 @@ class OsnastkaItemRemoveProcessor extends modObjectProcessor
 
         $ids = $this->modx->fromJSON($this->getProperty('ids'));
         if (empty($ids)) {
-            return $this->failure($this->modx->lexicon('Osnastka_item_err_ns'));
+            return $this->failure($this->modx->lexicon('osnastka_item_err_ns'));
         }
 
         foreach ($ids as $id) {
             /** @var OsnastkaItem $object */
             if (!$object = $this->modx->getObject($this->classKey, $id)) {
-                return $this->failure($this->modx->lexicon('Osnastka_item_err_nf'));
+                return $this->failure($this->modx->lexicon('osnastka_item_err_nf'));
             }
 
             $object->remove();

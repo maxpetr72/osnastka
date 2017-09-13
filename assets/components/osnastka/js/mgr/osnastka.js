@@ -5,6 +5,6 @@ var Osnastka = function (config) {
 Ext.extend(Osnastka, Ext.Component, {
     page: {}, window: {}, grid: {}, tree: {}, panel: {}, combo: {}, config: {}, view: {}, utils: {}
 });
-Ext.reg('Osnastka', Osnastka);
+Ext.reg('osnastka', Osnastka);
 
 Osnastka = new Osnastka();

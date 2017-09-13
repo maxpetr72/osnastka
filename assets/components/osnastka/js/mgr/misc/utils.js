@@ -93,7 +93,7 @@ Osnastka.utils.renderActions = function (value, props, row) {
     }
 
     return String.format(
-        '<ul class="Osnastka-row-actions">{0}</ul>',
+        '<ul class="osnastka-row-actions">{0}</ul>',
         res.join('')
     );
 };

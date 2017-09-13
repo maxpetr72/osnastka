@@ -44,5 +44,5 @@ Ext.extend(Osnastka.combo.Search, Ext.form.TwinTriggerField, {
     },
 
 });
-Ext.reg('Osnastka-combo-search', Osnastka.combo.Search);
-Ext.reg('Osnastka-field-search', Osnastka.combo.Search);
+Ext.reg('osnastka-combo-search', Osnastka.combo.Search);
+Ext.reg('osnastka-field-search', Osnastka.combo.Search);

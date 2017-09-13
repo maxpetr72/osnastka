@@ -8,7 +8,7 @@ $tmp = array(/*
     'some_setting' => array(
         'xtype' => 'combo-boolean',
         'value' => true,
-        'area' => 'Osnastka_main',
+        'area' => 'osnastka_main',
     ),
     */
 );
@@ -18,7 +18,7 @@ foreach ($tmp as $k => $v) {
     $setting = $modx->newObject('modSystemSetting');
     $setting->fromArray(array_merge(
         array(
-            'key' => 'Osnastka_' . $k,
+            'key' => 'osnastka_' . $k,
             'namespace' => PKG_NAME_LOWER,
         ), $v
     ), '', true, true);

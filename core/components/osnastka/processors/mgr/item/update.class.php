@@ -4,7 +4,7 @@ class OsnastkaItemUpdateProcessor extends modObjectUpdateProcessor
 {
     public $objectType = 'OsnastkaItem';
     public $classKey = 'OsnastkaItem';
-    public $languageTopics = array('Osnastka');
+    public $languageTopics = array('osnastka');
     //public $permission = 'save';
 
 
@@ -32,13 +32,13 @@ class OsnastkaItemUpdateProcessor extends modObjectUpdateProcessor
         $id = (int)$this->getProperty('id');
         $name = trim($this->getProperty('name'));
         if (empty($id)) {
-            return $this->modx->lexicon('Osnastka_item_err_ns');
+            return $this->modx->lexicon('osnastka_item_err_ns');
         }
 
         if (empty($name)) {
-            $this->modx->error->addField('name', $this->modx->lexicon('Osnastka_item_err_name'));
+            $this->modx->error->addField('name', $this->modx->lexicon('osnastka_item_err_name'));
         } elseif ($this->modx->getCount($this->classKey, array('name' => $name, 'id:!=' => $id))) {
-            $this->modx->error->addField('name', $this->modx->lexicon('Osnastka_item_err_ae'));
+            $this->modx->error->addField('name', $this->modx->lexicon('osnastka_item_err_ae'));
         }
 
         return parent::beforeSet();

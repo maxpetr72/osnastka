@@ -14,11 +14,11 @@ class Osnastka
     {
         $this->modx =& $modx;
 
-        $corePath = $this->modx->getOption('Osnastka_core_path', $config,
-            $this->modx->getOption('core_path') . 'components/Osnastka/'
+        $corePath = $this->modx->getOption('osnastka_core_path', $config,
+            $this->modx->getOption('core_path') . 'components/osnastka/'
         );
-        $assetsUrl = $this->modx->getOption('Osnastka_assets_url', $config,
-            $this->modx->getOption('assets_url') . 'components/Osnastka/'
+        $assetsUrl = $this->modx->getOption('osnastka_assets_url', $config,
+            $this->modx->getOption('assets_url') . 'components/osnastka/'
         );
         $connectorUrl = $assetsUrl . 'connector.php';
 
@@ -38,8 +38,8 @@ class Osnastka
             'processorsPath' => $corePath . 'processors/',
         ), $config);
 
-        $this->modx->addPackage('Osnastka', $this->config['modelPath']);
-        $this->modx->lexicon->load('Osnastka:default');
+        $this->modx->addPackage('osnastka', $this->config['modelPath']);
+        $this->modx->lexicon->load('osnastka:default');
     }
 
 }

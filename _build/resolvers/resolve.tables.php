@@ -8,13 +8,13 @@ if ($transport->xpdo) {
     switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         case xPDOTransport::ACTION_INSTALL:
         case xPDOTransport::ACTION_UPGRADE:
-            $modelPath = $modx->getOption('Osnastka_core_path', null,
-                    $modx->getOption('core_path') . 'components/Osnastka/') . 'model/';
-            $modx->addPackage('Osnastka', $modelPath);
+            $modelPath = $modx->getOption('osnastka_core_path', null,
+                    $modx->getOption('core_path') . 'components/osnastka/') . 'model/';
+            $modx->addPackage('osnastka', $modelPath);
 
             $manager = $modx->getManager();
             $objects = array();
-            $schemaFile = MODX_CORE_PATH . 'components/Osnastka/model/schema/Osnastka.mysql.schema.xml';
+            $schemaFile = MODX_CORE_PATH . 'components/osnastka/model/schema/osnastka.mysql.schema.xml';
             if (is_file($schemaFile)) {
                 $schema = new SimpleXMLElement($schemaFile, 0, true);
                 if (isset($schema->object)) {

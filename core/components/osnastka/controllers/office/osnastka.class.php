@@ -1,6 +1,6 @@
 <?php
 
-class officeOsnastkaController extends officeDefaultController
+class officeModExtraController extends officeDefaultController
 {
 
     /**
@@ -19,7 +19,7 @@ class officeOsnastkaController extends officeDefaultController
             $_SESSION['Office']['Osnastka'] = $this->config;
         }
 
-        $this->office->config['processorsPath'] = MODX_CORE_PATH . 'components/Osnastka/processors/office/';
+        $this->office->config['processorsPath'] = MODX_CORE_PATH . 'components/osnastka/processors/office/';
     }
 
 
@@ -28,7 +28,7 @@ class officeOsnastkaController extends officeDefaultController
      */
     public function getLanguageTopics()
     {
-        return array('Osnastka:default');
+        return array('osnastka:default');
     }
 
 
@@ -61,28 +61,28 @@ class officeOsnastkaController extends officeDefaultController
         */
 
         $config = $this->office->makePlaceholders($this->office->config);
-        $css = trim($this->modx->getOption('office_Osnastka_frontend_css', null,
+        $css = trim($this->modx->getOption('office_osnastka_frontend_css', null,
             MODX_ASSETS_URL . 'components/office/css/main/default.css', true));
         if (!empty($css)) {
             $this->modx->regClientCSS(str_replace($config['pl'], $config['vl'], $css));
         }
 
-        $js = trim($this->modx->getOption('office_Osnastka_frontend_js', null,
-            MODX_ASSETS_URL . 'components/Osnastka/js/office/default.js'));
+        $js = trim($this->modx->getOption('office_osnastka_frontend_js', null,
+            MODX_ASSETS_URL . 'components/osnastka/js/office/default.js'));
         if (!empty($js)) {
             $this->office->addClientExtJS();
             $this->office->addClientLexicon(array(
-                'Osnastka:default',
-            ), 'Osnastka/lexicon');
+                'osnastka:default',
+            ), 'osnastka/lexicon');
 
             $this->office->addClientJs(array(
-                MODX_ASSETS_URL . 'components/Osnastka/js/mgr/Osnastka.js',
-                MODX_ASSETS_URL . 'components/Osnastka/js/mgr/misc/utils.js',
-                MODX_ASSETS_URL . 'components/Osnastka/js/office/home.panel.js',
-                MODX_ASSETS_URL . 'components/Osnastka/js/office/items.grid.js',
-                MODX_ASSETS_URL . 'components/Osnastka/js/office/items.windows.js',
+                MODX_ASSETS_URL . 'components/osnastka/js/mgr/osnastka.js',
+                MODX_ASSETS_URL . 'components/osnastka/js/mgr/misc/utils.js',
+                MODX_ASSETS_URL . 'components/osnastka/js/office/home.panel.js',
+                MODX_ASSETS_URL . 'components/osnastka/js/office/items.grid.js',
+                MODX_ASSETS_URL . 'components/osnastka/js/office/items.windows.js',
                 str_replace($config['pl'], $config['vl'], $js),
-            ), 'Osnastka/all');
+            ), 'osnastka/all');
         }
 
         return $this->modx->getChunk($this->config['tplOuter']);
@@ -94,11 +94,11 @@ class officeOsnastkaController extends officeDefaultController
      */
     public function loadPackage()
     {
-        $corePath = $this->modx->getOption('Osnastka.core_path', null,
-            $this->modx->getOption('core_path') . 'components/Osnastka/');
+        $corePath = $this->modx->getOption('osnastka.core_path', null,
+            $this->modx->getOption('core_path') . 'components/osnastka/');
         $modelPath = $corePath . 'model/';
 
-        return $this->modx->addPackage('Osnastka', $modelPath);
+        return $this->modx->addPackage('osnastka', $modelPath);
     }
 
 
@@ -137,4 +137,4 @@ class officeOsnastkaController extends officeDefaultController
 
 }
 
-return 'officeOsnastkaController';
+return 'officeModExtraController';

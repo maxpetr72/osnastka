@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package Osnastka
+ * @package osnastka
  */
 class OsnastkaItem extends xPDOSimpleObject
 {

@@ -1,1 +1,1 @@
-<div id="Osnastka-panel-home-div"></div>
+<div id="osnastka-panel-home-div"></div>

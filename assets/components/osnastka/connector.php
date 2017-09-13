@@ -11,13 +11,13 @@ require_once MODX_CORE_PATH . 'config/' . MODX_CONFIG_KEY . '.inc.php';
 /** @noinspection PhpIncludeInspection */
 require_once MODX_CONNECTORS_PATH . 'index.php';
 /** @var Osnastka $Osnastka */
-$Osnastka = $modx->getService('Osnastka', 'Osnastka', $modx->getOption('Osnastka_core_path', null,
-        $modx->getOption('core_path') . 'components/Osnastka/') . 'model/Osnastka/'
+$Osnastka = $modx->getService('osnastka', 'Osnastka', $modx->getOption('osnastka_core_path', null,
+        $modx->getOption('core_path') . 'components/osnastka/') . 'model/osnastka/'
 );
-$modx->lexicon->load('Osnastka:default');
+$modx->lexicon->load('osnastka:default');
 
 // handle request
-$corePath = $modx->getOption('Osnastka_core_path', null, $modx->getOption('core_path') . 'components/Osnastka/');
+$corePath = $modx->getOption('osnastka_core_path', null, $modx->getOption('core_path') . 'components/osnastka/');
 $path = $modx->getOption('processorsPath', $Osnastka->config, $corePath . 'processors/');
 $modx->getRequest();
 

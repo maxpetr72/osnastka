@@ -6,7 +6,7 @@ $snippets = array();
 
 $tmp = array(
     'Osnastka' => array(
-        'file' => 'Osnastka',
+        'file' => 'osnastka',
         'description' => '',
     ),
 );

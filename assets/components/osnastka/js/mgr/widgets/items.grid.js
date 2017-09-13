@@ -1,7 +1,7 @@
 Osnastka.grid.Items = function (config) {
     config = config || {};
     if (!config.id) {
-        config.id = 'Osnastka-grid-items';
+        config.id = 'osnastka-grid-items';
     }
     Ext.applyIf(config, {
         url: Osnastka.config.connector_url,
@@ -26,7 +26,7 @@ Osnastka.grid.Items = function (config) {
             scrollOffset: 0,
             getRowClass: function (rec) {
                 return !rec.data.active
-                    ? 'Osnastka-grid-row-disabled'
+                    ? 'osnastka-grid-row-disabled'
                     : '';
             }
         },
@@ -57,7 +57,7 @@ Ext.extend(Osnastka.grid.Items, MODx.grid.Grid, {
 
     createItem: function (btn, e) {
         var w = MODx.load({
-            xtype: 'Osnastka-item-window-create',
+            xtype: 'osnastka-item-window-create',
             id: Ext.id(),
             listeners: {
                 success: {
@@ -91,7 +91,7 @@ Ext.extend(Osnastka.grid.Items, MODx.grid.Grid, {
                 success: {
                     fn: function (r) {
                         var w = MODx.load({
-                            xtype: 'Osnastka-item-window-update',
+                            xtype: 'osnastka-item-window-update',
                             id: Ext.id(),
                             record: r,
                             listeners: {
@@ -118,11 +118,11 @@ Ext.extend(Osnastka.grid.Items, MODx.grid.Grid, {
         }
         MODx.msg.confirm({
             title: ids.length > 1
-                ? _('Osnastka_items_remove')
-                : _('Osnastka_item_remove'),
+                ? _('osnastka_items_remove')
+                : _('osnastka_item_remove'),
             text: ids.length > 1
-                ? _('Osnastka_items_remove_confirm')
-                : _('Osnastka_item_remove_confirm'),
+                ? _('osnastka_items_remove_confirm')
+                : _('osnastka_item_remove_confirm'),
             url: this.config.url,
             params: {
                 action: 'mgr/item/remove',
@@ -187,28 +187,28 @@ Ext.extend(Osnastka.grid.Items, MODx.grid.Grid, {
 
     getColumns: function () {
         return [{
-            header: _('Osnastka_item_id'),
+            header: _('osnastka_item_id'),
             dataIndex: 'id',
             sortable: true,
             width: 70
         }, {
-            header: _('Osnastka_item_name'),
+            header: _('osnastka_item_name'),
             dataIndex: 'name',
             sortable: true,
             width: 200,
         }, {
-            header: _('Osnastka_item_description'),
+            header: _('osnastka_item_description'),
             dataIndex: 'description',
             sortable: false,
             width: 250,
         }, {
-            header: _('Osnastka_item_active'),
+            header: _('osnastka_item_active'),
             dataIndex: 'active',
             renderer: Osnastka.utils.renderBoolean,
             sortable: true,
             width: 100,
         }, {
-            header: _('Osnastka_grid_actions'),
+            header: _('osnastka_grid_actions'),
             dataIndex: 'actions',
             renderer: Osnastka.utils.renderActions,
             sortable: false,
@@ -219,11 +219,11 @@ Ext.extend(Osnastka.grid.Items, MODx.grid.Grid, {
 
     getTopBar: function () {
         return [{
-            text: '<i class="icon icon-plus"></i>&nbsp;' + _('Osnastka_item_create'),
+            text: '<i class="icon icon-plus"></i>&nbsp;' + _('osnastka_item_create'),
             handler: this.createItem,
             scope: this
         }, '->', {
-            xtype: 'Osnastka-field-search',
+            xtype: 'osnastka-field-search',
             width: 250,
             listeners: {
                 search: {
@@ -284,4 +284,4 @@ Ext.extend(Osnastka.grid.Items, MODx.grid.Grid, {
         this.getBottomToolbar().changePage(1);
     },
 });
-Ext.reg('Osnastka-grid-items', Osnastka.grid.Items);
+Ext.reg('osnastka-grid-items', Osnastka.grid.Items);

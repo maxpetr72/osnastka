@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(dirname(__FILE__)) . '/Osnastkaitem.class.php');
+require_once(dirname(dirname(__FILE__)) . '/osnastkaitem.class.php');
 
 class OsnastkaItem_mysql extends OsnastkaItem
 {

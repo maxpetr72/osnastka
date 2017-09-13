@@ -2,8 +2,8 @@
 /** @var modX $modx */
 /** @var array $scriptProperties */
 /** @var Osnastka $Osnastka */
-if (!$Osnastka = $modx->getService('Osnastka', 'Osnastka', $modx->getOption('Osnastka_core_path', null,
-        $modx->getOption('core_path') . 'components/Osnastka/') . 'model/Osnastka/', $scriptProperties)
+if (!$Osnastka = $modx->getService('osnastka', 'Osnastka', $modx->getOption('osnastka_core_path', null,
+        $modx->getOption('core_path') . 'components/osnastka/') . 'model/osnastka/', $scriptProperties)
 ) {
     return 'Could not load Osnastka class!';
 }

@@ -5,7 +5,7 @@ Osnastka.panel.Home = function (config) {
         layout: 'anchor',
         /*
          stateful: true,
-         stateId: 'Osnastka-panel-home',
+         stateId: 'osnastka-panel-home',
          stateEvents: ['tabchange'],
          getState:function() {return {activeTab:this.items.indexOf(this.getActiveTab())};},
          */
@@ -16,13 +16,13 @@ Osnastka.panel.Home = function (config) {
             border: false,
             hideMode: 'offsets',
             items: [{
-                title: _('Osnastka_items'),
+                title: _('osnastka_items'),
                 layout: 'anchor',
                 items: [{
-                    html: _('Osnastka_intro_msg'),
+                    html: _('osnastka_intro_msg'),
                     cls: 'panel-desc',
                 }, {
-                    xtype: 'Osnastka-grid-items',
+                    xtype: 'osnastka-grid-items',
                     cls: 'main-wrapper',
                 }]
             }]
@@ -31,4 +31,4 @@ Osnastka.panel.Home = function (config) {
     Osnastka.panel.Home.superclass.constructor.call(this, config);
 };
 Ext.extend(Osnastka.panel.Home, MODx.Panel);
-Ext.reg('Osnastka-panel-home', Osnastka.panel.Home);
+Ext.reg('osnastka-panel-home', Osnastka.panel.Home);

@@ -6,7 +6,7 @@ $plugins = array();
 
 $tmp = array(/*
     'Osnastka' => array(
-        'file' => 'Osnastka',
+        'file' => 'osnastka',
         'description' => '',
         'events' => array(
             'OnManagerPageInit' => array()

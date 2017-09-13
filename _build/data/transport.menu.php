@@ -5,8 +5,8 @@
 $menus = array();
 
 $tmp = array(
-    'Osnastka' => array(
-        'description' => 'Osnastka_menu_desc',
+    'osnastka' => array(
+        'description' => 'osnastka_menu_desc',
         'action' => 'home',
         //'icon' => '<i class="icon icon-large icon-modx"></i>',
     ),

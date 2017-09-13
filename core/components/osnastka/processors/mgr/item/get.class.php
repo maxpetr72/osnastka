@@ -4,7 +4,7 @@ class OsnastkaItemGetProcessor extends modObjectGetProcessor
 {
     public $objectType = 'OsnastkaItem';
     public $classKey = 'OsnastkaItem';
-    public $languageTopics = array('Osnastka:default');
+    public $languageTopics = array('osnastka:default');
     //public $permission = 'view';
 
 

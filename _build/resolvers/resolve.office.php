@@ -22,7 +22,7 @@ if ($transport->xpdo) {
         switch ($options[xPDOTransport::PACKAGE_ACTION]) {
             case xPDOTransport::ACTION_INSTALL:
             case xPDOTransport::ACTION_UPGRADE:
-                $Office->addExtension('Osnastka', '[[++core_path]]components/Osnastka/controllers/office/');
+                $Office->addExtension('Osnastka', '[[++core_path]]components/osnastka/controllers/office/');
                 $modx->log(xPDO::LOG_LEVEL_INFO, '[Osnastka] Successfully registered Osnastka as Office extension!');
                 break;
 

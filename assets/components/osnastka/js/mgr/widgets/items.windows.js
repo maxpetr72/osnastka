@@ -1,10 +1,10 @@
 Osnastka.window.CreateItem = function (config) {
     config = config || {};
     if (!config.id) {
-        config.id = 'Osnastka-item-window-create';
+        config.id = 'osnastka-item-window-create';
     }
     Ext.applyIf(config, {
-        title: _('Osnastka_item_create'),
+        title: _('osnastka_item_create'),
         width: 550,
         autoHeight: true,
         url: Osnastka.config.connector_url,
@@ -23,21 +23,21 @@ Ext.extend(Osnastka.window.CreateItem, MODx.Window, {
     getFields: function (config) {
         return [{
             xtype: 'textfield',
-            fieldLabel: _('Osnastka_item_name'),
+            fieldLabel: _('osnastka_item_name'),
             name: 'name',
             id: config.id + '-name',
             anchor: '99%',
             allowBlank: false,
         }, {
             xtype: 'textarea',
-            fieldLabel: _('Osnastka_item_description'),
+            fieldLabel: _('osnastka_item_description'),
             name: 'description',
             id: config.id + '-description',
             height: 150,
             anchor: '99%'
         }, {
             xtype: 'xcheckbox',
-            boxLabel: _('Osnastka_item_active'),
+            boxLabel: _('osnastka_item_active'),
             name: 'active',
             id: config.id + '-active',
             checked: true,
@@ -48,16 +48,16 @@ Ext.extend(Osnastka.window.CreateItem, MODx.Window, {
     }
 
 });
-Ext.reg('Osnastka-item-window-create', Osnastka.window.CreateItem);
+Ext.reg('osnastka-item-window-create', Osnastka.window.CreateItem);
 
 
 Osnastka.window.UpdateItem = function (config) {
     config = config || {};
     if (!config.id) {
-        config.id = 'Osnastka-item-window-update';
+        config.id = 'osnastka-item-window-update';
     }
     Ext.applyIf(config, {
-        title: _('Osnastka_item_update'),
+        title: _('osnastka_item_update'),
         width: 550,
         autoHeight: true,
         url: Osnastka.config.connector_url,
@@ -80,21 +80,21 @@ Ext.extend(Osnastka.window.UpdateItem, MODx.Window, {
             id: config.id + '-id',
         }, {
             xtype: 'textfield',
-            fieldLabel: _('Osnastka_item_name'),
+            fieldLabel: _('osnastka_item_name'),
             name: 'name',
             id: config.id + '-name',
             anchor: '99%',
             allowBlank: false,
         }, {
             xtype: 'textarea',
-            fieldLabel: _('Osnastka_item_description'),
+            fieldLabel: _('osnastka_item_description'),
             name: 'description',
             id: config.id + '-description',
             anchor: '99%',
             height: 150,
         }, {
             xtype: 'xcheckbox',
-            boxLabel: _('Osnastka_item_active'),
+            boxLabel: _('osnastka_item_active'),
             name: 'active',
             id: config.id + '-active',
         }];
@@ -104,4 +104,4 @@ Ext.extend(Osnastka.window.UpdateItem, MODx.Window, {
     }
 
 });
-Ext.reg('Osnastka-item-window-update', Osnastka.window.UpdateItem);
+Ext.reg('osnastka-item-window-update', Osnastka.window.UpdateItem);

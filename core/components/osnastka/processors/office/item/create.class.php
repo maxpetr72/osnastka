@@ -4,7 +4,7 @@ class OsnastkaOfficeItemCreateProcessor extends modObjectCreateProcessor
 {
     public $objectType = 'OsnastkaItem';
     public $classKey = 'OsnastkaItem';
-    public $languageTopics = array('Osnastka');
+    public $languageTopics = array('osnastka');
     //public $permission = 'create';
 
 
@@ -15,9 +15,9 @@ class OsnastkaOfficeItemCreateProcessor extends modObjectCreateProcessor
     {
         $name = trim($this->getProperty('name'));
         if (empty($name)) {
-            $this->modx->error->addField('name', $this->modx->lexicon('Osnastka_item_err_name'));
+            $this->modx->error->addField('name', $this->modx->lexicon('osnastka_item_err_name'));
         } elseif ($this->modx->getCount($this->classKey, array('name' => $name))) {
-            $this->modx->error->addField('name', $this->modx->lexicon('Osnastka_item_err_ae'));
+            $this->modx->error->addField('name', $this->modx->lexicon('osnastka_item_err_ae'));
         }
 
         return parent::beforeSet();
