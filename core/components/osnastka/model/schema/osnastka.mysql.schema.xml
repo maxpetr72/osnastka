@@ -1,18 +1,169 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model package="osnastka" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="osnastka"
+<model package="osnastka" 
+       baseClass="xPDOObject" 
+       platform="mysql" 
+       defaultEngine="MyISAM" 
+       tablePrefix="osn_"
+       phpdoc-package="osnastka" 
+       phpdoc-subpackage="model"
        version="1.1">
 
-    <object class="OsnastkaItem" table="osnastka_items" extends="xPDOSimpleObject">
-        <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default=""/>
-        <field key="description" dbtype="text" phptype="text" null="true" default=""/>
-        <field key="active" dbtype="tinyint" precision="1" phptype="boolean" null="true" default="1"/>
+<!-- old -->
+<!--
+CREATE TABLE IF NOT EXISTS `osnastka_raports_bakup` (
+  `z` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `mm` float UNSIGNED NOT NULL,
+  `is_uses` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`z`) USING BTREE,
+  UNIQUE KEY `MM` (`mm`) USING BTREE
+);
+-->
+<!-- /old -->
+    <object class="OsnastkaRaports" 
+	    table="osnastka_raports" 
+	    extends="xPDOObject"
+    >
+        <field key="z" 
+	       dbtype="int" 
+	       precision="11" 
+	       attributes="unsigned" 
+	       phptype="integer" 
+	       null="false" 
+	       default="0" 
+	       index="pk"
+	/>
+        <field key="mm" 
+	       dbtype="float" 
+	       phptype="float" 
+	       null="false" 
+	       default=""
+	/>
+        <field key="is_uses" 
+	       dbtype="tinyint" 
+	       precision="1" 
+	       phptype="boolean" 
+	       null="false" 
+	       default="0"
+	/>
 
-        <index alias="name" name="name" primary="false" unique="false" type="BTREE">
+        <index alias="Z" 
+	       name="z" 
+	       primary="true" 
+	       unique="true" 
+	       type="BTREE"
+	>
+            <column key="z" length="" 
+		    collation="A" 
+		    null="false"
+	    />
+        </index>
+        <index alias="MM" 
+	       name="mm" 
+	       primary="false" 
+	       unique="true" 
+	       type="BTREE"
+	>
+            <column key="mm" length="" 
+		    collation="A" 
+		    null="false"
+	    />
+        </index>
+    </object>
+
+<!-- old -->
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="Osnastka" 
+       baseClass="xPDOObject" 
+       platform="mysql" 
+       defaultEngine="InnoDB" 
+       phpdoc-package="Osnastka"
+       version="1.1">
+
+    <object class="OsnastkaRaports" 
+	    table="osnastka_raports" 
+	    extends="xPDOObject">
+        <field key="z" 
+	       dbtype="int" 
+	       precision="11" 
+	       phptype="integer" 
+	       null="false"  
+	       default=""
+	       index="pk"  
+	/>
+        <field key="mm" 
+	       dbtype="float" 
+	       phptype="integer" 
+	       null="false" 
+	       default=""
+	/>
+        <field key="is_uses" 
+	       dbtype="tinyint" 
+	       precision="1" 
+	       phptype="boolean" 
+	       null="false" 
+	       default="0"
+	/>
+	
+        <index alias="Z" name="z" primary="true" unique="true" type="BTREE">
+            <column key="z" length="" collation="A" null="false"/>
+        </index>
+        <index alias="MM" name="mm" primary="false" unique="true" type="BTREE">
+            <column key="mm" length="" collation="A" null="false"/>
+        </index>
+    </object>
+
+</model>
+-->
+<!-- /old -->
+
+<!-- from "bezumkin.ru" with change to Osnastka -->
+<!--
+    <object class="OsnastkaItem" table="osnastka_items" 
+	    extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="100" phptype="string" 
+	       null="false" default=""/>
+
+        <field key="description" dbtype="text" phptype="text" 
+	       null="true" default=""/>
+        <field key="active" dbtype="tinyint" precision="1" phptype="boolean" 
+	       null="true" default="1"/>
+
+        <index alias="name" name="name" primary="false" unique="false" 
+	       type="BTREE">
             <column key="name" length="" collation="A" null="false"/>
         </index>
-        <index alias="active" name="active" primary="false" unique="false" type="BTREE">
+        <index alias="active" name="active" primary="false" unique="false" 
+	       type="BTREE">
             <column key="active" length="" collation="A" null="false"/>
         </index>
     </object>
+-->
+<!-- /from "bezumkin.ru" with change to Osnastka -->
+
+<!-- xPDO Schem from doc (cutting) -->
+<!--
+   <object class="sfStore" table="stores" extends="xPDOSimpleObject">
+	<field key="name" dbtype="varchar" precision="100" phptype="string" 
+	       null="false" default="" index="index" />
+	<field key="zip" dbtype="varchar" precision="10" phptype="string" 
+	       null="false" default="0" index="index" />
+	<field key="active" dbtype="int" precision="1" attributes="unsigned" 
+	       phptype="integer" 
+	       null="false" default="0" />
+
+	<index alias="name" name="name" primary="false" unique="false" 
+	       type="BTREE">
+	<column key="name" length="" collation="A" null="false" />
+	</index>
+	<index alias="zip" name="zip" primary="false" unique="false" 
+	       type="BTREE">
+	    <column key="zip" length="" collation="A" null="false" />
+	</index>
+
+	<alias key="postalcode" field="zip" />
+    </object>
+-->
+<!-- /xPDO Schem from doc (cutting) -->
 
 </model>
